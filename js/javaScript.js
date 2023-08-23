@@ -6,7 +6,7 @@ form.addEventListener('submit',async function (e) {
     let btn = document.getElementById('btn');
     btn.value = "enviando...";
     let titulo = document.getElementById('titulo');
-    fetch("https://script.google.com/macros/s/AKfycbwBgJrNCuekcHxTQD4ASLVPDSGX42wi4e9hg2POA3Cwhxrlhbwqu52iJEg30KmTyRxY/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbx5CN1m7Ch46Zl5TexrvMhwG8mVEIF-znB04vAm1fduA00g4jpdc9WTBZqSJmxT4G9V/exec", {
         method: 'POST',
         body: data,
     }).then( res => res.text())
@@ -14,7 +14,7 @@ form.addEventListener('submit',async function (e) {
             titulo.innerText = "Gracias por contactarnos " + data;
             btn.value = "enviado";
 
-        });
+         });
 })
 
 
