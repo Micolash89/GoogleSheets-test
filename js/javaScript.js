@@ -6,7 +6,7 @@ form.addEventListener('submit',async function (e) {
     let btn = document.getElementById('btn');
     btn.value = "enviando...";
     let titulo = document.getElementById('titulo');
-    fetch("https://script.google.com/macros/s/AKfycbx5CN1m7Ch46Zl5TexrvMhwG8mVEIF-znB04vAm1fduA00g4jpdc9WTBZqSJmxT4G9V/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbyAWTe68swx6i9hrb5KayZJN4fxdrlYhyKsJxO9oS6eWZWNz6NlEFKC2VS3-pGy2eYr/exec", {
         method: 'POST',
         body: data,
     }).then( res => res.text())
@@ -16,9 +16,6 @@ form.addEventListener('submit',async function (e) {
 
          });
 })
-
-
-
 
 
 ////////enviar a google  sheet un registro con una api///// no es gratis la api-30 dias de prueba sad
