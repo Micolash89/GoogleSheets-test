@@ -13,7 +13,6 @@ form.addEventListener('submit',async function (e) {
         .then( data => {
             titulo.innerText = "Gracias por contactarnos " + data;
             btn.value = "enviado";
-
          });
 })
 
