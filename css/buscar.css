@@ -1,0 +1,9 @@
+.editar,.eliminar{
+    border: 1px solid black;
+    background-color: red ;
+    cursor: pointer;
+    color: white;
+    padding: 3px;
+    border-radius: 5px;
+    text-align: center;
+}

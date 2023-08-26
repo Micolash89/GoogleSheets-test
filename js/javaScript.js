@@ -1,19 +1,20 @@
+
 const form = document.getElementById('formulario');
 
-form.addEventListener('submit',async function (e) {
+form.addEventListener('submit', async function (e) {
     e.preventDefault();
     const data = new FormData(form);
     let btn = document.getElementById('btn');
     btn.value = "enviando...";
     let titulo = document.getElementById('titulo');
-    fetch("https://script.google.com/macros/s/AKfycbyAWTe68swx6i9hrb5KayZJN4fxdrlYhyKsJxO9oS6eWZWNz6NlEFKC2VS3-pGy2eYr/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbwd1qG3_DZ0Dv0ytrkOeXdOQ2-p2R5QYQwkImHGdXEjAGcR06d7G7EJfilRLcBDG9D2/exec", {
         method: 'POST',
         body: data,
-    }).then( res => res.text())
-        .then( data => {
+    }).then(res => res.text())
+        .then(data => {
             titulo.innerText = "Gracias por contactarnos " + data;
             btn.value = "enviado";
-         });
+        });
 })
 
 
