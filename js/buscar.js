@@ -21,8 +21,9 @@ async function find(e) {
 };
 
 window.editar = async function editar(id) {
+    
 try {
-    fetch("https://script.google.com/macros/s/AKfycbyLXj2BzeJ-fkwVZYcqrt5mzhVT7CkcYj3BeZEueIxcRscUbZJkuuzPxMasxqS92bJ1/exec" + `?update=true&id=${id}$data=${form[0].value}`)
+    fetch("https://script.google.com/macros/s/AKfycbzsqKDGdM4uMbR6G85SMPE5DRdw5vyi1KG1kkqbCr2AEHDJGzuadB12iX1iJtqjXg11/exec"+`?update=true&id=${id}&dato=${form[0].value}`)
         .then(res => res.text())
         .then(data => {
             actualizarTabla();
@@ -46,17 +47,17 @@ try {
 async function actualizarTabla() {
     try {
         fetch("https://script.google.com/macros/s/AKfycbwd1qG3_DZ0Dv0ytrkOeXdOQ2-p2R5QYQwkImHGdXEjAGcR06d7G7EJfilRLcBDG9D2/exec")
-            .then(res => res.json())
-            .then(data => {
+        .then(res => res.json())
+        .then(data => {
                 const vec = data.nombre;
                 if (vec.length) {
                     const text = vec.map((j) => {
                         return `
                     <tr>
-                        <td>${j[0]}</td>
-                        <td>${j[1]}</td>
-                        <td>${j[2]}</td>
-                        <td>${j[3]}</td>
+                        <td class="id">${j[0]}</td>
+                        <td class="nombre">${j[1]}</td>
+                        <td >${j[2]}</td>
+                        <td >${j[3]}</td>
                         <td class="editar" onClick="editar(${j[0]})">Editar</td>
                         <td class="eliminar" onClick="eliminar(${j[0]})">eliminar</td>
                     </tr>
@@ -65,7 +66,6 @@ async function actualizarTabla() {
                 }
                 else
                     mensaje.innerHTML = "no hay datos";
-
             });
     } catch (error) {
         mensaje = "mensaje error con la base de datos " + error;
