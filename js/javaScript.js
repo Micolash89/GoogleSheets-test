@@ -1,12 +1,22 @@
 
 const form = document.getElementById('formulario');
+const inputNombre = document.getElementById('nombre');
 
 form.addEventListener('submit', async function (e) {
     e.preventDefault();
+
     const data = new FormData(form);
     let btn = document.getElementById('btn');
     btn.value = "enviando...";
     let titulo = document.getElementById('titulo');
+
+    let longitud = inputNombre.value.trim().length;
+
+    if (longitud < 3) {
+        inputNombre.setCustomValidity("más de 3 caracteres");
+        return;
+    }
+
     fetch("https://script.google.com/macros/s/AKfycbwd1qG3_DZ0Dv0ytrkOeXdOQ2-p2R5QYQwkImHGdXEjAGcR06d7G7EJfilRLcBDG9D2/exec", {
         method: 'POST',
         body: data,
